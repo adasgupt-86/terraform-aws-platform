@@ -1,0 +1,21 @@
+# Terraform
+.terraform/
+*.tfstate
+*.tfstate.*
+*.tfplan
+crash.log
+crash.*.log
+
+# Sensitive variable files
+*.tfvars
+*.tfvars.json
+
+# Terraform lock file should NOT be ignored
+# .terraform.lock.hcl is intentionally committed
+
+# OS
+.DS_Store
+
+# Editor
+.vscode/
+.idea/
