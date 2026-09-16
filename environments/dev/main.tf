@@ -5,5 +5,6 @@ resource "aws_s3_bucket" "application" {
     Name        = var.bucket_name
     Environment = var.environment
     ManagedBy   = "Terraform"
+    Project     = "terraform-training"
   }
 }
