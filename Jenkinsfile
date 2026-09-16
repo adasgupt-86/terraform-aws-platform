@@ -24,8 +24,13 @@ pipeline {
 
         stage('Terraform Init') {
             steps {
-                dir('environments/dev') {
-                    sh 'terraform init -input=false'
+                withCredentials([
+                    [$class: 'AmazonWebServicesCredentialsBinding',
+                     credentialsId: 'aws-terraform-lab']
+                ]) {
+                    dir('environments/dev') {
+                        sh 'terraform init -input=false'
+                    }
                 }
             }
         }
