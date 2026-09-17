@@ -53,8 +53,7 @@ pipeline {
                         sh '''
                             terraform plan \
                               -input=false \
-                              -var="bucket_name=abhisheks-application-bucket" \
-                              -var="environment=dev" \
+                              -var-file=dev.tfvars \
                               -out=tfplan
                         '''
                     }
